@@ -6,6 +6,8 @@ import userRoute from "./routes/userRoute.js";
 import tweetRoute from "./routes/tweetRoute.js";
 import cors from "cors";
 
+const port = process.env.PORT || 4000;
+
 dotenv.config({
     path: ".env"
 })
@@ -36,6 +38,6 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/tweet", tweetRoute);
 
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server listen at port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Server listen at port ${port}`);
 })
