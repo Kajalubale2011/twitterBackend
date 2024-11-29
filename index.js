@@ -20,15 +20,18 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 app.use(cookieParser());
-const corsOptions = {
-    origin: [
-        // "https://twitter-clone-3-txso.onrender.com",
-        // "http://localhost:3000"
-        "http://localhost:3000",
-    ],
+// const corsOptions = {
+//     origin: [
+//         "https://kaleidoscopic-concha-752a63.netlify.app/login",
+//         // "http://localhost:3000"
+//         // "http://localhost:3000",
+//     ],
+//     credentials: true
+// }
+app.use(cors({
+    origin: "https://kaleidoscopic-concha-752a63.netlify.app",
     credentials: true
-}
-app.use(cors(corsOptions));
+}));
 
 app.get('/', (req, res) => {
     res.send('Welcome to the API');
